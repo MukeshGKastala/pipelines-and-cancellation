@@ -121,7 +121,8 @@ func TestProcess(t *testing.T) {
 
 	assert.ErrorContains(t, gerr, problematicMeetingID)
 	days, _ := strconv.Atoi(problematicMeetingID)
-	assert.Less(t, got, time.Date(2023, time.January, 1, 0, 0, 0, 0, time.UTC).AddDate(0, 0, days)) // IDs start at 1
+	days-- // IDs start at 1
+	assert.Less(t, got, time.Date(2023, time.January, 1, 0, 0, 0, 0, time.UTC).AddDate(0, 0, days))
 	assert.Equal(t, 2, runtime.NumGoroutine())
 }
 
