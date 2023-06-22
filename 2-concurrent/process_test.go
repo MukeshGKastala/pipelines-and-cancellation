@@ -12,7 +12,7 @@ import (
 	"testing"
 	"time"
 
-	concurrent "example.com/pipelines-and-cancellation/1-bounded-concurrency"
+	concurrent "example.com/pipelines-and-cancellation/2-concurrent"
 	"github.com/google/uuid"
 	"github.com/stretchr/testify/assert"
 )
